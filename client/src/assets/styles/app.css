@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+html,
+body,
+#root,
+.app {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Readex Pro", sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  background: linear-gradient(to left bottom, #65243c, #1a1f78, #0b0b10);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Enhanced scrollbar styling */
+*::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+:root {
+  --color-primary: #fff;
+  --color-secondary: #e1e1e8;
+  --color-success: #1da84d;
+  --color-info: #2d6fe3;
+  --color-warning: #d68a0a;
+  --color-danger: #db3333;
+  --color-light: #e5e7f9;
+  --color-dark: #111325;
+  --color-blue: #1fb6ff;
+  --color-purple: #7e5bef;
+  --color-pink: #ff49db;
+  --color-orange: #ff7849;
+  --color-gray-dark: #273444;
+  --color-gray: #8492a6;
+  --color-gray-light: #d3dce6;
+  --color-white: #fff;
+}
+
+/* Animation keyframes for content fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to main content */
+.min-h-screen > div {
+  animation: fadeIn 1s ease-out;
+}
