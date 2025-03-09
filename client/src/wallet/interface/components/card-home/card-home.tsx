@@ -3,6 +3,8 @@ export interface ICardHome {
   address?: string;
   network: string;
   amount: number;
+  onConnect: () => void;
+  isLoading: boolean;
 }
 
 export const CardHome: React.FC<ICardHome> = (props) => {
@@ -26,12 +28,26 @@ export const CardHome: React.FC<ICardHome> = (props) => {
           </>
         ) : (
           <div className="flex flex-col items-center justify-center h-full">
-            <p className="text-gray-300 text-lg font-medium mb-4">
-              To Start, Connect Your Wallet
-            </p>
-            <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors cursor-pointer">
-              Connect Wallet
-            </button>
+            {props.isLoading ? (
+              <div className="flex items-center justify-center flex-col">
+                <div className="w-12 h-12 border-t-2 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+                <p className="text-gray-300 text-lg font-small mb-4">
+                  Loading...
+                </p>
+              </div>
+            ) : (
+              <>
+                <p className="text-gray-300 text-lg font-medium mb-4">
+                  To Start, Connect Your Wallet
+                </p>
+                <button
+                  onClick={props.onConnect}
+                  className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors cursor-pointer"
+                >
+                  Connect your MetaMask Wallet
+                </button>
+              </>
+            )}
           </div>
         )}
       </div>
