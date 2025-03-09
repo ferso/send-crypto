@@ -73,7 +73,7 @@ export const WalletAppScreen = () => {
             network={"Ethereum"}
             amount={0}
             onConnect={GetAccounts}
-            isLoading={true}
+            isLoading={isLoadingSdk}
           />
 
           <SendCryptoForm />
