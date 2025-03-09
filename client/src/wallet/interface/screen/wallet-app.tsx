@@ -48,14 +48,12 @@ export const WalletAppScreen = () => {
       params: [],
     });
 
-    console.log(accounts);
+    console.log(accounts, result);
   };
 
   useEffect(() => {
     init();
   }, []);
-
-  console.log(sdk);
 
   return (
     <MainLayout>
